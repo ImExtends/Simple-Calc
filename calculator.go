@@ -87,10 +87,6 @@ func (f Fraction) additionner(b Fraction) Fraction {
 	}
 }
 
-func (f Fraction) String() string{
-		return strconv.Itoa(f.Numerator) + "/" + strconv.Itoa(f.Denominator)
-}
-
 func abs(a int) int {
 	if a < 0 {
 		return -a
