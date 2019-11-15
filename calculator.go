@@ -32,7 +32,7 @@ func main() {
 	fmt.Println(Fraction.oppose(f))
 }
 
-func (f Fraction) oppose() Fraction {
+func (f Fraction) Oppose() Fraction {
 	f.Denominator = -f.Denominator
 	return f
 }
@@ -46,7 +46,7 @@ func GCD(a, b int) int {
 	return a
 }
 
-func (f Fraction) simplifier() Fraction{
+func (f Fraction) Simplifier() Fraction{
 	gcd := GCD(f.Numerator, f.Denominator)
 	f.Numerator /= gcd
 	f.Denominator /= gcd
@@ -54,30 +54,30 @@ func (f Fraction) simplifier() Fraction{
 	return f
 }
 
-func (f Fraction) valeur_approchee() float64{
+func (f Fraction) Valeur_approchee() float64{
 	y := float64(f.Numerator) / float64(f.Denominator)
 	return math.Round(y)
 }
 
-func (f Fraction) soustraire(g Fraction) Fraction{
+func (f Fraction) Soustraire(g Fraction) Fraction{
 	return f.additionner(Fraction{-g.Numerator, g.Denominator})
 }
 
-func (f Fraction) inverse() Fraction{
+func (f Fraction) Inverse() Fraction{
 	return Fraction{f.Denominator, f.Numerator}
 }
 
-func (f Fraction) diviser(g Fraction) Fraction{
+func (f Fraction) Diviser(g Fraction) Fraction{
 	return f.multilplier(Fraction{g.Denominator, g.Numerator})
 }
 
-func (f Fraction) multilplier(g Fraction) Fraction{
+func (f Fraction) Multilplier(g Fraction) Fraction{
 	f.Numerator *= g.Numerator
 	f.Denominator *= g.Denominator
 	return f
 }
 
-func (f Fraction) additionner(b Fraction) Fraction {
+func (f Fraction) Additionner(b Fraction) Fraction {
 		num := f.Numerator*b.Denominator + b.Numerator*f.Denominator
 		den := f.Denominator * b.Denominator
 		d := GCD(abs(num), den)
@@ -87,7 +87,7 @@ func (f Fraction) additionner(b Fraction) Fraction {
 	}
 }
 
-func abs(a int) int {
+func Abs(a int) int {
 	if a < 0 {
 		return -a
 	}
